@@ -9,6 +9,7 @@ namespace Spawner
     public class Spawn : MonoBehaviour
     { 
         [SerializeField]private GameObject[] fruits;
+        [SerializeField]private float angleRotate;
         [SerializeField]private float minForce;
         [SerializeField]private float maxForce;
          
@@ -38,12 +39,10 @@ namespace Spawner
                 Vector2 positionFruit = new Vector2(position.x, position.y);
                 Quaternion rotation = Quaternion.Euler(0f, 0f, 0);
                 GameObject prefab = fruits[Random.Range(0, fruits.Length)];
-
                 float force = Random.Range(minForce, maxForce);
                 float angle = Random.Range(minAngle, maxAngle) * Mathf.Deg2Rad;
-
+                
                 Instantiate(prefab, positionFruit, rotation).GetComponent<Gravity>().direction = VectorFromAngle(angle) * force;
-        
                 yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
             }
         }
