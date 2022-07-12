@@ -7,29 +7,16 @@ using Random = UnityEngine.Random;
 namespace Spawner
 {
     public class Spawn : MonoBehaviour
-    {
+    { 
         [SerializeField]private GameObject[] fruits;
-        //[SerializeField]private GameObject fruit;
-        //[SerializeField] private float power;
-        //[SerializeField] private float angle;
-        //private Vector2 vectorAngle;
-
-        //[SerializeField]private Vector2 startSpawn;
-        // [SerializeField]private Vector2 endSpawn;
-
-       [SerializeField]private float minForce;
-       [SerializeField]private float maxForce;
+        [SerializeField]private float minForce;
+        [SerializeField]private float maxForce;
+         
+        [SerializeField]private float minAngle;
+        [SerializeField]private float maxAngle;
         
-       [SerializeField]private float minAngle;
-       [SerializeField]private float maxAngle;
-       
-       [SerializeField]private float minSpawnDelay;
-       [SerializeField]private float maxSpawnDelay;
-        
-        // Start is called before the first frame update
-        private void Awake()
-        {
-        }
+        [SerializeField]private float minSpawnDelay;
+        [SerializeField]private float maxSpawnDelay;
 
         private void OnEnable()
         {
@@ -41,11 +28,6 @@ namespace Spawner
             StopAllCoroutines();
         }
 
-        
-        private void Update()
-        {
-        }
-        
         private IEnumerator Spawning()
         {
             yield return new WaitForSeconds(2f);
