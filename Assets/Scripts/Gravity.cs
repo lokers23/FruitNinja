@@ -9,16 +9,21 @@ public class Gravity : MonoBehaviour
     public Vector2 direction;
     public float rotateZ;
     private Vector2 gravityVector;
+    private Vector3 scaleChange;
     
     private void Awake()
     {
-        gravityVector = new Vector2(0, gravity) * Time.deltaTime;
+        scaleChange = new Vector3(-0.12f, -0.12f, 0) ;
+        gravityVector = new Vector2(0, gravity);
     }
 
     private void Update()
     {
+        transform.localScale += scaleChange * Time.deltaTime;
         transform.GetChild(0).Rotate(0, 0, rotateZ);
         transform.Translate(direction * Time.deltaTime);
-        direction += gravityVector;
+        direction += gravityVector * Time.deltaTime;
+        if(Vector3.Distance(transform.position, Camera.main.transform.position) > 500)
+            Destroy(gameObject);
     }
 }
