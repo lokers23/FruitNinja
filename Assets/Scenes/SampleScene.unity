@@ -140,15 +140,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: maxAngle
-      value: 105
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: maxForce
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: minAngle
-      value: 75
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: minForce
@@ -160,11 +160,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: angleRotate
-      value: 10
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: periodInRow
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: maxAngleRotate
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: minAngleRotate
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: limitNumberFruit
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: reduceSpawnDelay
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: fruits.Array.size
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: periodUpDifficult
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: increaseNumberFruit
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: fruits.Array.data[0]
@@ -257,15 +285,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: maxAngle
-      value: 130
+      value: 135
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: maxForce
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: minAngle
-      value: 120
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: fruitInRow
@@ -273,15 +301,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: angleRotate
-      value: 10
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: periodInRow
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: maxSpawnDelay
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: minSpawnDelay
-      value: 5
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: maxAngleRotate
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: minAngleRotate
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: limitNumberFruit
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: reduceSpawnDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: periodUpDifficult
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: increaseNumberFruit
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: fruits.Array.data[0]
@@ -321,11 +377,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7832254615991769477, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.35
+      value: 11.29
       objectReference: {fileID: 0}
     - target: {fileID: 7832254615991769477, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.26
+      value: -4.21
       objectReference: {fileID: 0}
     - target: {fileID: 7832254615991769477, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -461,15 +517,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: maxAngle
-      value: 45
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: maxForce
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: minAngle
-      value: 30
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: fruitInRow
@@ -477,15 +533,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: angleRotate
-      value: 10
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: periodInRow
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: maxSpawnDelay
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: minSpawnDelay
-      value: 5
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: maxAngleRotate
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: minAngleRotate
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: limitNumberFruit
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: reduceSpawnDelay
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: periodUpDifficult
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
+      propertyPath: increaseNumberFruit
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4779754439102768872, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: fruits.Array.data[0]
@@ -525,11 +609,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7832254615991769477, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.26
+      value: -11.29
       objectReference: {fileID: 0}
     - target: {fileID: 7832254615991769477, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.21
+      value: -4.44
       objectReference: {fileID: 0}
     - target: {fileID: 7832254615991769477, guid: 7827a2f4f52a0b3498619ab7e4874eb1, type: 3}
       propertyPath: m_LocalPosition.z
