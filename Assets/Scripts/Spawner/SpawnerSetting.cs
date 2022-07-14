@@ -6,11 +6,6 @@ namespace Spawner
         public int fruitInRow;
         public float periodInRow;
         
-        public int periodUpDifficult;
-        public int increaseNumberFruit;
-        public float limitNumberFruit;
-        public float reduceSpawnDelay;
-        
         public float maxAngleRotate;
         public float minAngleRotate;
         
