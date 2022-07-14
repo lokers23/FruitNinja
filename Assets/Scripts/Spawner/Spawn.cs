@@ -30,21 +30,21 @@ namespace Spawner
         [SerializeField]private float minSpawnDelay;
         [SerializeField]private float maxSpawnDelay;
 
-        private IEnumerator coroutineDifficult;
+        private IEnumerator _coroutineDifficult;
 
         private void Update()
         {
             if (fruitInRow >= limitNumberFruit)
             {
-                StopCoroutine(coroutineDifficult);
+                StopCoroutine(_coroutineDifficult);
             }
         }
 
         private void OnEnable()
         {
             StartCoroutine(Spawning());
-            coroutineDifficult = IncreasingDifficulty();
-            StartCoroutine(coroutineDifficult);
+            _coroutineDifficult = IncreasingDifficulty();
+            StartCoroutine(_coroutineDifficult);
         }
 
         private void OnDisable()
@@ -66,11 +66,11 @@ namespace Spawner
                     
                     float force = Random.Range(minForce, maxForce);
                     float angle = Random.Range(minAngle, maxAngle) * Mathf.Deg2Rad;
-                    float rotate = Random.Range(minAngleRotate, maxAngleRotate);
+                    float rotate = Random.Range(minAngleRotate, maxAngleRotate) * Mathf.Deg2Rad;
                     
-                    var fruit = Instantiate(prefab, positionFruit, rotation).GetComponent<Gravity>();
+                    var fruit = Instantiate(prefab, positionFruit, rotation).GetComponent<PhysicObject>();
                     fruit.direction = VectorFromAngle(angle) * force;
-                    fruit.rotateZ = rotate * Mathf.Deg2Rad;
+                    fruit.rotate = rotate;
                     
                     yield return new WaitForSeconds(periodInRow);
                 }
@@ -81,7 +81,7 @@ namespace Spawner
         
         private IEnumerator IncreasingDifficulty() {
             yield return new WaitForSeconds(periodUpDifficult);
-            for(;;)
+            while(true)
             {
                 fruitInRow += increaseNumberFruit;
                 minSpawnDelay -= reduceSpawnDelay;
@@ -90,8 +90,8 @@ namespace Spawner
                 yield return new WaitForSeconds(periodUpDifficult);
             }
         }
-        
-        Vector2 VectorFromAngle(float angle)
+
+        private static Vector2 VectorFromAngle(float angle)
         {
             var sin = Mathf.Sin(angle);
             var cos = Mathf.Cos(angle);
