@@ -8,33 +8,14 @@ namespace Spawner
 {
     public class Spawn : MonoBehaviour
     { 
-        [SerializeField]private GameObject[] fruits;
-        
-        [SerializeField] private int fruitInRow;
-        [SerializeField] private float periodInRow;
-        
-        [SerializeField] private int periodUpDifficult;
-        [SerializeField] private int increaseNumberFruit;
-        [SerializeField] private float limitNumberFruit;
-        [SerializeField] private float reduceSpawnDelay;
-        
-        [SerializeField]private float maxAngleRotate;
-        [SerializeField]private float minAngleRotate;
-        
-        [SerializeField]private float minForce;
-        [SerializeField]private float maxForce;
-         
-        [SerializeField]private float minAngle;
-        [SerializeField]private float maxAngle;
-        
-        [SerializeField]private float minSpawnDelay;
-        [SerializeField]private float maxSpawnDelay;
+        [SerializeField] private GameObject[] fruits;
+        [SerializeField] private SpawnerSetting spawnerSetting;
 
         private IEnumerator _coroutineDifficult;
 
         private void Update()
         {
-            if (fruitInRow >= limitNumberFruit)
+            if (spawnerSetting.fruitInRow >= spawnerSetting.limitNumberFruit)
             {
                 StopCoroutine(_coroutineDifficult);
             }
@@ -57,37 +38,37 @@ namespace Spawner
             yield return new WaitForSeconds(2f);
             while (enabled)
             {
-                for (int i = 0; i < fruitInRow; i++)
+                for (int i = 0; i < spawnerSetting.fruitInRow; i++)
                 {
                     var position = transform.position;
                     Vector2 positionFruit = new Vector2(position.x, position.y);
                     Quaternion rotation = Quaternion.Euler(0f, 0f, 0);
                     GameObject prefab = fruits[Random.Range(0, fruits.Length)];
                     
-                    float force = Random.Range(minForce, maxForce);
-                    float angle = Random.Range(minAngle, maxAngle) * Mathf.Deg2Rad;
-                    float rotate = Random.Range(minAngleRotate, maxAngleRotate) * Mathf.Deg2Rad;
+                    float force = Random.Range(spawnerSetting.minForce, spawnerSetting.maxForce);
+                    float angle = Random.Range(spawnerSetting.minAngle, spawnerSetting.maxAngle) * Mathf.Deg2Rad;
+                    float rotate = Random.Range(spawnerSetting.minAngleRotate, spawnerSetting.maxAngleRotate) * Mathf.Deg2Rad;
                     
                     var fruit = Instantiate(prefab, positionFruit, rotation).GetComponent<PhysicObject>();
                     fruit.direction = VectorFromAngle(angle) * force;
                     fruit.rotate = rotate;
                     
-                    yield return new WaitForSeconds(periodInRow);
+                    yield return new WaitForSeconds(spawnerSetting.periodInRow);
                 }
                 
-                yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
+                yield return new WaitForSeconds(Random.Range(spawnerSetting.minSpawnDelay, spawnerSetting.maxSpawnDelay));
             }
         }
         
         private IEnumerator IncreasingDifficulty() {
-            yield return new WaitForSeconds(periodUpDifficult);
+            yield return new WaitForSeconds(spawnerSetting.periodUpDifficult);
             while(true)
             {
-                fruitInRow += increaseNumberFruit;
-                minSpawnDelay -= reduceSpawnDelay;
-                maxSpawnDelay -= reduceSpawnDelay;
+                spawnerSetting.fruitInRow += spawnerSetting.increaseNumberFruit;
+                spawnerSetting.minSpawnDelay -= spawnerSetting.reduceSpawnDelay;
+                spawnerSetting.maxSpawnDelay -= spawnerSetting.reduceSpawnDelay;
                 
-                yield return new WaitForSeconds(periodUpDifficult);
+                yield return new WaitForSeconds(spawnerSetting.periodUpDifficult);
             }
         }
 
