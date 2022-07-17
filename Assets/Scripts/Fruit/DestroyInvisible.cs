@@ -1,12 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyInvisible : MonoBehaviour
+namespace Fruit
 {
-    private void OnBecameInvisible()
+    public class DestroyInvisible : MonoBehaviour
     {
-        Destroy(gameObject);
+        private void OnBecameInvisible()
+        {
+            Destroy(gameObject);
+        }
     }
 }

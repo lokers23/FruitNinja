@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Fruit;
 using UnityEngine;
 using static System.Random;
 using Random = UnityEngine.Random;
@@ -10,12 +11,14 @@ namespace Spawner
     { 
         [SerializeField] private GameObject[] fruits;
         [SerializeField] private SpawnerSetting spawnerSetting;
+        [SerializeField] private DifficultSetting difficultSetting;
 
+        private const float StartingDelay = 2f;
         private IEnumerator _coroutineDifficult;
 
         private void Update()
         {
-            if (spawnerSetting.fruitInRow >= spawnerSetting.limitNumberFruit)
+            if (spawnerSetting.fruitInRow >= difficultSetting.limitNumberFruit)
             {
                 StopCoroutine(_coroutineDifficult);
             }
@@ -35,14 +38,14 @@ namespace Spawner
 
         private IEnumerator Spawning()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(StartingDelay);
             while (enabled)
             {
                 for (int i = 0; i < spawnerSetting.fruitInRow; i++)
                 {
                     var position = transform.position;
                     Vector2 positionFruit = new Vector2(position.x, position.y);
-                    Quaternion rotation = Quaternion.Euler(0f, 0f, 0);
+                    Quaternion rotation = Quaternion.Euler(0f, 0f, 0f);
                     GameObject prefab = fruits[Random.Range(0, fruits.Length)];
                     
                     float force = Random.Range(spawnerSetting.minForce, spawnerSetting.maxForce);
@@ -60,15 +63,16 @@ namespace Spawner
             }
         }
         
-        private IEnumerator IncreasingDifficulty() {
-            yield return new WaitForSeconds(spawnerSetting.periodUpDifficult);
-            while(true)
+        private IEnumerator IncreasingDifficulty() 
+        {
+            yield return new WaitForSeconds(difficultSetting.periodUpDifficult);
+            while(enabled)
             {
-                spawnerSetting.fruitInRow += spawnerSetting.increaseNumberFruit;
-                spawnerSetting.minSpawnDelay -= spawnerSetting.reduceSpawnDelay;
-                spawnerSetting.maxSpawnDelay -= spawnerSetting.reduceSpawnDelay;
+                spawnerSetting.fruitInRow += difficultSetting.increaseNumberFruit;
+                spawnerSetting.minSpawnDelay -= difficultSetting.reduceSpawnDelay;
+                spawnerSetting.maxSpawnDelay -= difficultSetting.reduceSpawnDelay;
                 
-                yield return new WaitForSeconds(spawnerSetting.periodUpDifficult);
+                yield return new WaitForSeconds(difficultSetting.periodUpDifficult);
             }
         }
 
