@@ -40,10 +40,7 @@ namespace Fruit
 
             if (_swipeDelta.magnitude > _minimumDistanceSwipe)
             {
-                if (EventSwipe != null)
-                {
-                    EventSwipe();
-                }
+                EventSwipe?.Invoke();
             }
         }
 

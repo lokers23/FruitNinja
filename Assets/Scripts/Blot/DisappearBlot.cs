@@ -1,20 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DisappearBlot : MonoBehaviour
+namespace Blot
 {
-    [SerializeField] private SpriteRenderer _spriteRenderer;
-    void Start()
+    public class DisappearBlot : MonoBehaviour
     {
-        Destroy(gameObject, 5f);
-    }
+        [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private float timeLife = 3f;
+        [SerializeField] private float speedDisappearance = 0.2f;
 
-    void Update()
-    {
-       var q =  _spriteRenderer.color;
-       q.a -= 0.2f * Time.deltaTime;
-       _spriteRenderer.color = q;
+        private void Start()
+        {
+            Destroy(gameObject, timeLife);
+        }
 
+        private void Update()
+        {
+            var color =  spriteRenderer.color;
+            color.a -= speedDisappearance * Time.deltaTime;
+            spriteRenderer.color = color;
+        }
     }
 }
