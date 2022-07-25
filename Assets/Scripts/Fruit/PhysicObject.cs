@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Fruit
@@ -10,7 +11,7 @@ namespace Fruit
         
         [HideInInspector] public Vector2 direction;
         [HideInInspector] public float rotate;
-    
+
         private void Update()
         {
             transform.localScale += speedScale * Time.deltaTime;

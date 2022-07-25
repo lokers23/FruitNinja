@@ -13,7 +13,7 @@ namespace Spawner
         [SerializeField] private SpawnerSetting spawnerSetting;
         [SerializeField] private DifficultSetting difficultSetting;
 
-        private const float StartingDelay = 2f;
+        [SerializeField] private float startingDelay = 2f;
         private IEnumerator _coroutineDifficult;
 
         private void Update()
@@ -26,6 +26,7 @@ namespace Spawner
 
         private void OnEnable()
         {
+            HealthController.EventEndGame += OnDisable;
             StartCoroutine(Spawning());
             _coroutineDifficult = IncreasingDifficulty();
             StartCoroutine(_coroutineDifficult);
@@ -34,11 +35,12 @@ namespace Spawner
         private void OnDisable()
         {
             StopAllCoroutines();
+            HealthController.EventEndGame -= OnDisable;
         }
 
         private IEnumerator Spawning()
         {
-            yield return new WaitForSeconds(StartingDelay);
+            yield return new WaitForSeconds(startingDelay);
             while (enabled)
             {
                 for (int i = 0; i < spawnerSetting.fruitInRow; i++)
