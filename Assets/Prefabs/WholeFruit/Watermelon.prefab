@@ -293,6 +293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0362508658bdf4d8c0162aca1fc499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 30
+  scoreText: {fileID: 1375373069160523567, guid: b7f38f606d001db4ab843fd77b137999, type: 3}
   radius: 1.35
   wholeObject: {fileID: 6361778651548962313}
   sliceObject: {fileID: 6838587652723726557, guid: 44205f898aa6a164680b97fc07d3869c, type: 3}

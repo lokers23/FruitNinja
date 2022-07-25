@@ -211,6 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0362508658bdf4d8c0162aca1fc499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 30
+  scoreText: {fileID: 1375373069160523567, guid: b7f38f606d001db4ab843fd77b137999, type: 3}
   radius: 1.35
   wholeObject: {fileID: 4560235071314868613}
   sliceObject: {fileID: 7367203973200581094, guid: b81910a75ff896d47a4fe6c1049f3d7b, type: 3}

@@ -106,7 +106,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503492809927871799}
-  m_LocalRotation: {x: -0, y: -0, z: 0.13916326, w: 0.9902695}
+  m_LocalRotation: {x: -0, y: -0, z: 0.726249, w: 0.6874318}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -189,7 +189,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461071699295382727}
-  m_LocalRotation: {x: -0, y: -0, z: 0.13916326, w: 0.9902695}
+  m_LocalRotation: {x: -0, y: -0, z: 0.726249, w: 0.6874318}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -295,7 +295,7 @@ MonoBehaviour:
   gravityVector: {x: 0, y: -9.82}
   speedScale: {x: 0, y: 0, z: 0}
   spriteFruit: {fileID: 2806559776502542665}
-  direction: {x: 3.7342072, y: 4.8420916}
+  direction: {x: -2.6666527, y: -9.402411}
   rotate: 0
 --- !u!1 &5939524050568981205
 GameObject:
@@ -309,6 +309,7 @@ GameObject:
   - component: {fileID: 1346902174691944193}
   - component: {fileID: 8145687168979425021}
   - component: {fileID: 2618169158489697146}
+  - component: {fileID: 7415330967509441658}
   m_Layer: 0
   m_Name: LemonSlice
   m_TagString: Untagged
@@ -325,7 +326,7 @@ Transform:
   m_GameObject: {fileID: 5939524050568981205}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.45, y: 3.08, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8603504, y: 0.8603504, z: 1}
   m_Children:
   - {fileID: 3843646017177359423}
   - {fileID: 5405403403247624415}
@@ -466,8 +467,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.7
-      minScalar: 0.5
+      scalar: 0.8
+      minScalar: 0.6
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -635,8 +636,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.4
-      minScalar: 0.3
+      scalar: 0.5
+      minScalar: 0.4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5213,6 +5214,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &7415330967509441658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5939524050568981205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6205c9cc5e6eee04a8b5d5fc70c6c4ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 2802126761892845054, guid: 9f20ad036f050e44cbda0843e65685bc, type: 3}
 --- !u!1 &6079105926805454912
 GameObject:
   m_ObjectHideFlags: 0
@@ -5342,5 +5356,5 @@ MonoBehaviour:
   gravityVector: {x: 0, y: -9.82}
   speedScale: {x: 0, y: 0, z: 0}
   spriteFruit: {fileID: 3394908687264556833}
-  direction: {x: 4.734207, y: 5.8420916}
+  direction: {x: -1.6666527, y: -8.402411}
   rotate: 0

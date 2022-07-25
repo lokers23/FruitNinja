@@ -47,7 +47,7 @@ MonoBehaviour:
   gravityVector: {x: 0, y: -9.82}
   speedScale: {x: 0, y: 0, z: 0}
   spriteFruit: {fileID: 5901972910448119117}
-  direction: {x: 7.0812383, y: -1.1390959}
+  direction: {x: 3.8308818, y: -4.9703536}
   rotate: 0
 --- !u!1 &3073835116267678252
 GameObject:
@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 7801375869582265709}
   - component: {fileID: 1152478623988350097}
   - component: {fileID: 6530426833624547606}
+  - component: {fileID: 8033094268434331279}
   m_Layer: 0
   m_Name: PearSlice
   m_TagString: Untagged
@@ -159,7 +160,7 @@ Transform:
   m_GameObject: {fileID: 3213401651888652473}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.22, y: -0.28, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.94824785, y: 0.94824785, z: 1}
   m_Children:
   - {fileID: 5450052439577476691}
   - {fileID: 3888576394333293235}
@@ -300,8 +301,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.7
-      minScalar: 0.5
+      scalar: 0.8
+      minScalar: 0.6
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -469,8 +470,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.4
-      minScalar: 0.3
+      scalar: 0.5
+      minScalar: 0.4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5047,6 +5048,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &8033094268434331279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3213401651888652473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6205c9cc5e6eee04a8b5d5fc70c6c4ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 2802126761892845054, guid: 9f20ad036f050e44cbda0843e65685bc, type: 3}
 --- !u!1 &4171295891609590603
 GameObject:
   m_ObjectHideFlags: 0
@@ -5094,7 +5108,7 @@ MonoBehaviour:
   gravityVector: {x: 0, y: -9.82}
   speedScale: {x: 0, y: 0, z: 0}
   spriteFruit: {fileID: 6343251211443165989}
-  direction: {x: 6.0812383, y: -2.1390958}
+  direction: {x: 2.8308818, y: -5.9703536}
   rotate: 0
 --- !u!1 &7688738137615828651
 GameObject:
@@ -5120,7 +5134,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7688738137615828651}
-  m_LocalRotation: {x: -0, y: -0, z: -0.14997165, w: 0.9886904}
+  m_LocalRotation: {x: -0, y: -0, z: -0.61073434, w: 0.79183555}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5203,7 +5217,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8649693505825892187}
-  m_LocalRotation: {x: -0, y: -0, z: -0.14997165, w: 0.9886904}
+  m_LocalRotation: {x: -0, y: -0, z: -0.61073434, w: 0.79183555}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
