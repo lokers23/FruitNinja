@@ -8,60 +8,45 @@ using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
 {
-    [SerializeField] private int health;
-    [SerializeField] private int numberOfHearts;
+    public static event Action EventEndGame;
+    [SerializeField] private int heartsCount;
 
-    [SerializeField] private Image[] hearts;
-    [SerializeField] private Sprite fullHeart;
-    [SerializeField] private Sprite emptyHeart;
-    
-    [SerializeField] private Text textOverThreeHeart;
-    
     [SerializeField] private int damage;
 
-    private StringBuilder _text;
-    private const string Plus = "+";
+    private GameObject[] _hearts;
+    private int _indexHead = 0;
     private void Awake()
     {
         DestroyInvisible.OnDestroy += SetDamage;
-        _text = new StringBuilder(50);
     }
 
-    private void FixedUpdate()
+    private void Start()
     {
-        _text.Length = 0;
-        if (health > numberOfHearts)
+        _hearts = new GameObject[heartsCount];
+        var heartTemplate = transform.GetChild(0).gameObject;
+        for (var i = 0; i < heartsCount; i++)
         {
-            health = numberOfHearts;
+            _hearts[i] = Instantiate(heartTemplate, transform);
         }
         
-        ChangeHealth();
-        
-        for (int i = 0; i < hearts.Length; i++)
-        {
-            hearts[i].sprite = i < health ? fullHeart : emptyHeart;
-
-            hearts[i].enabled = i < numberOfHearts;
-        }
-    }
-
-    private void ChangeHealth()
-    {
-        if (health > hearts.Length)
-        {
-            _text.Append(Plus);
-            _text.Append(health - hearts.Length);
-            textOverThreeHeart.text = _text.ToString();
-        }
-        else
-        {
-            textOverThreeHeart.text = "";
-        }
+        Destroy(heartTemplate);
     }
 
     private void SetDamage()
     {
-        health -= damage;
+        if (_indexHead < _hearts.Length)
+        {
+            for (int i = 0; i < damage; i++)
+            {
+                _hearts[_indexHead].SetActive(false);
+                _indexHead++;
+            }
+        }
+        
+        if (_indexHead >= _hearts.Length)
+        {
+            EventEndGame?.Invoke();
+            DestroyInvisible.OnDestroy -= SetDamage;
+        }
     }
-    
 }
