@@ -1,14 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class SceneController : MonoBehaviour
 {
-    public void NextScene(int sceneNumber)
+    private string _nameScene = "";
+    private Animator _animator;
+    private static readonly int ClickButtonPlay = Animator.StringToHash("ClickButtonPlay");
+
+    private void Awake()
     {
-        SceneManager.LoadScene(sceneNumber);
+        _animator = GetComponent<Animator>();
+    }
+
+    public void PlayAnimationFade(string nameScene)
+    {
+        _nameScene = nameScene;
+        _animator.SetTrigger(ClickButtonPlay);
+    }
+    public void NextScene()
+    {
+        SceneManager.LoadScene(_nameScene);
     }
 
     public void Exit()
