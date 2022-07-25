@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Blade
 {
-    public class BladeMove : MonoBehaviour
+    public class BladeController : MonoBehaviour
     {
         [SerializeField] private TrailRenderer trail;
         [SerializeField] private Camera currentCamera;

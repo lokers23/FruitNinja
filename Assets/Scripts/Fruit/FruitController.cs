@@ -1,13 +1,19 @@
 using System;
+using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Fruit
 {
     public class FruitController : MonoBehaviour
     {
         private const float PositionBlotAxisZ = 19f;
-        public static event Action EventSlice; 
-        
+        public static event Action<int> EventSlice;
+
+        [SerializeField] private int score = 30;
+        [SerializeField] private TextMeshPro scoreText;
+
         [SerializeField] private float radius;
         [SerializeField] private GameObject wholeObject;
         [SerializeField] private GameObject sliceObject;
@@ -27,32 +33,35 @@ namespace Fruit
             _component = GetComponent<PhysicObject>();
             DetectSwipe.EventSwipe += OnSlice;
         }
-
+        
         private void OnSlice()
         {
-            if (this != null)
+            var bladePosition = _blade.transform.position;
+            var fruitPosition = transform.position;
+            
+            var distance = Vector3.Distance(fruitPosition, bladePosition);
+            if (distance <= radius)
             {
-                var bladePosition = _blade.transform.position;
-                var fruitPosition = transform.position;
+                var rotation = wholeObject.transform.rotation;
+                SettingParametersOfHalves(_pieces[0], _pieces[1], rotation);
+                CreatingSliceObject(fruitPosition);
+                CreatingBlot(blot, fruitPosition);
+                CreateTextScore(fruitPosition);
                 
-                var distance = Vector3.Distance(fruitPosition, bladePosition);
-                if (distance <= radius)
-                {
-                    var rotation = wholeObject.transform.rotation;
-                    SettingParametersOfHalves(_pieces[0], _pieces[1], rotation);
-                    CreatingSliceObject(fruitPosition);
-                    CreatingBlot(blot, fruitPosition);
+                EventSlice?.Invoke(score);
                 
-                    EventSlice?.Invoke();
-                    
-                    Destroy(gameObject);
-                    DetectSwipe.EventSwipe -= OnSlice;
-                }
+                Destroy(gameObject);
             }
         }
-        
+
+        private void OnDisable()
+        {
+            DetectSwipe.EventSwipe -= OnSlice;
+        }
+
         private void SettingParametersOfHalves(PhysicObject firstObject, PhysicObject secondObject, Quaternion rotation)
         {
+            sliceObject.transform.localScale = wholeObject.transform.lossyScale;
             firstObject.spriteFruit.rotation = rotation;
             firstObject.direction = new Vector2(_component.direction.x - slicedDirectionX, _component.direction.y - slicedDirectionY);
             secondObject.spriteFruit.rotation = rotation;
@@ -62,10 +71,10 @@ namespace Fruit
         private void CreatingSliceObject(Vector3 position)
         {
             var newObject = Instantiate(sliceObject, position, Quaternion.identity);
-            Destroy(newObject, 2f);
+            Destroy(newObject, 3f);
         }
         
-        private static void CreatingBlot(GameObject blot, Vector3 position)
+        private  void CreatingBlot(GameObject blot, Vector3 position)
         {
             if (blot == null)
             {
@@ -73,6 +82,13 @@ namespace Fruit
             }
             
             Instantiate(blot,new Vector3(position.x, position.y, PositionBlotAxisZ) , Quaternion.identity);
+        }
+
+        private  void CreateTextScore(Vector3 position)
+        {
+            TextMeshPro newObject = Instantiate(scoreText, position, quaternion.identity);
+            newObject.text = score.ToString();
+            Destroy(newObject.gameObject, 1f);
         }
     }
 }
