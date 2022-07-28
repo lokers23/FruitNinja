@@ -47,7 +47,7 @@ MonoBehaviour:
   gravityVector: {x: 0, y: -9.82}
   speedScale: {x: 0, y: 0, z: 0}
   spriteFruit: {fileID: 5713882140489849516}
-  direction: {x: -7.439893, y: -6.9115205}
+  direction: {x: 2.5351155, y: 7.0284696}
   rotate: 0
 --- !u!1 &2828444305914989738
 GameObject:
@@ -96,7 +96,7 @@ MonoBehaviour:
   gravityVector: {x: 0, y: -9.82}
   speedScale: {x: 0, y: 0, z: 0}
   spriteFruit: {fileID: 5090208603332627652}
-  direction: {x: -8.439893, y: -7.9115205}
+  direction: {x: 1.5351155, y: 6.0284696}
   rotate: 0
 --- !u!1 &3619635545939875672
 GameObject:
@@ -127,7 +127,7 @@ Transform:
   m_GameObject: {fileID: 3619635545939875672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.45, y: 2.27, z: 0}
-  m_LocalScale: {x: 0.9793689, y: 0.9793689, z: 1}
+  m_LocalScale: {x: 1.1829332, y: 1.1829332, z: 1}
   m_Children:
   - {fileID: 6125376316643584434}
   - {fileID: 3122458265872571730}
@@ -1128,7 +1128,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 10
+        scalar: 22
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -5216,7 +5216,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7397776968913318074}
-  m_LocalRotation: {x: -0, y: -0, z: -0.05241641, w: 0.99862534}
+  m_LocalRotation: {x: -0, y: -0, z: -0.023323786, w: 0.99972796}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5299,7 +5299,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8363235113193083210}
-  m_LocalRotation: {x: -0, y: -0, z: -0.05241641, w: 0.99862534}
+  m_LocalRotation: {x: -0, y: -0, z: -0.023323786, w: 0.99972796}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
