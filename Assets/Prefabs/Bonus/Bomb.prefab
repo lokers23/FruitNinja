@@ -211,8 +211,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BonusText: {fileID: 7058526707285146988, guid: f3a0d39fe22b1b54181b2e549d2a3dfc, type: 3}
-  radius: 1.2
+  radiusSlice: 1
   imageAfterSlice: {fileID: 3552992774837307576, guid: 0f8c4fcf469e72d4ab515135695fdfc2, type: 3}
+  damage: 1
+  powerExplosion: 2
+  minRadiusExplosion: 5
+  maxRadiusExplosion: 10
 --- !u!1 &6120863402459861228
 GameObject:
   m_ObjectHideFlags: 0

@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0362508658bdf4d8c0162aca1fc499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolObjects: {fileID: 3402001150726581481, guid: e68ec62e51041374e8019e0c58b642f6, type: 3}
+  damage: 1
   score: 30
   scoreText: {fileID: 1375373069160523567, guid: b7f38f606d001db4ab843fd77b137999, type: 3}
   radius: 1.35
