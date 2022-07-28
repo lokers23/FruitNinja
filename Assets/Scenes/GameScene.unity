@@ -2920,7 +2920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631129845787732285, guid: 198da43a73a7aff49bca4f97b6ffaad6, type: 3}
       propertyPath: chanceSpawnBomb
-      value: 0.1
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 5631129845787732285, guid: 198da43a73a7aff49bca4f97b6ffaad6, type: 3}
       propertyPath: chanceSpawnHeart

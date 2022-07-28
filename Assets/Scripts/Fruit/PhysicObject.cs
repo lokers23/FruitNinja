@@ -9,7 +9,7 @@ namespace Fruit
         [SerializeField] private Vector3 speedScale = new Vector3(-0.12f, -0.12f, 0) ;
         public Transform spriteFruit;
         
-        [HideInInspector] public Vector2 direction;
+        [HideInInspector] public Vector2 direction = Vector2.zero;
         [HideInInspector] public float rotate;
 
         private void Update()
