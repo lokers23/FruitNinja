@@ -10,13 +10,18 @@ public class BombController : MonoBehaviour
 {
         private const float PositionBonusImageAxisZ = 19f;
         public static event Action<int> EventSliceBomb;
+        public static event Action<float, float, float, Vector3> EventExplosion;
         
         [SerializeField] private TextMeshPro BonusText;
 
-        [SerializeField] private float radius;
+        [SerializeField] private float radiusSlice;
         [SerializeField] private GameObject imageAfterSlice;
 
         [SerializeField] private int damage = 1;
+        
+        [SerializeField] private float powerExplosion;
+        [SerializeField] private float minRadiusExplosion;
+        [SerializeField] private float maxRadiusExplosion;
         private GameObject _blade;
 
         private void Awake()
@@ -31,13 +36,13 @@ public class BombController : MonoBehaviour
             var basePosition = transform.position;
             
             var distance = Vector3.Distance(basePosition, bladePosition);
-            if (distance <= radius)
+            if (distance <= radiusSlice)
             {
                 CreateImage(basePosition);
                 CreateText(basePosition);
                 
                 EventSliceBomb?.Invoke(damage);
-
+                EventExplosion?.Invoke(powerExplosion, minRadiusExplosion, maxRadiusExplosion, transform.position);
                 Destroy(gameObject);
             }
         }
