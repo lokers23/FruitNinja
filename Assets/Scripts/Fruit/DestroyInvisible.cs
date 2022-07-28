@@ -5,10 +5,17 @@ namespace Fruit
 {
     public class DestroyInvisible : MonoBehaviour
     {
-        public static event Action OnDestroy;
+        public static event Action<int> OnDestroy;
         [SerializeField] private Camera mainCamera;
 
         private const string TagBonus = "Bonus";
+
+        private FruitController _fruitController;
+        private void Awake()
+        {
+            _fruitController = GetComponent<FruitController>();
+        }
+
         private void Update()
         {
             DetectObjectOutBorder();
@@ -21,7 +28,7 @@ namespace Fruit
             {
                 if (!CompareTag(TagBonus))
                 {
-                    OnDestroy?.Invoke();
+                    OnDestroy?.Invoke(_fruitController.Damage);
                 }
                 
                 Destroy(gameObject);
