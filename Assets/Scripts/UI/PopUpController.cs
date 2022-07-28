@@ -13,8 +13,8 @@ public class PopUpController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI popUpCurrentScore;
     [SerializeField] private TextMeshProUGUI popUpBestScore;
     
-    [SerializeField] private Text currentScore;
-    [SerializeField] private Text bestScore;
+    [SerializeField] private TextMeshProUGUI currentScore;
+    [SerializeField] private TextMeshProUGUI bestScore;
     [SerializeField] private GameObject popUp;
 
     private Animator _animator;
