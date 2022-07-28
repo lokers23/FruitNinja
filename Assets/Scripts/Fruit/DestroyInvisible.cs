@@ -8,6 +8,7 @@ namespace Fruit
         public static event Action OnDestroy;
         [SerializeField] private Camera mainCamera;
 
+        private const string TagBonus = "Bonus";
         private void Update()
         {
             DetectObjectOutBorder();
@@ -18,7 +19,11 @@ namespace Fruit
             var bottomCorner = mainCamera.ViewportToWorldPoint (new Vector2 (0,0));
             if (transform.position.y <= bottomCorner.x)
             {
-                OnDestroy?.Invoke();
+                if (!CompareTag(TagBonus))
+                {
+                    OnDestroy?.Invoke();
+                }
+                
                 Destroy(gameObject);
             }
         }
