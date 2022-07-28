@@ -8,16 +8,24 @@ public class HealthController : MonoBehaviour
     public static event Action EventEndGame;
     [SerializeField] private int heartsCount;
 
-    [SerializeField] private int damage;
+    //[SerializeField] private int damage;
 
     private GameObject[] _hearts;
 
     public int IndexHead { get; private set; } = 0;
 
-    private void Awake()
+    private void OnEnable()
     {
         HeartController.EventSliceHeart += RecoverHeart;
         DestroyInvisible.OnDestroy += SetDamage;
+        BombController.EventSliceBomb += SetDamage;
+    }
+
+    private void OnDisable()
+    {
+        HeartController.EventSliceHeart -= RecoverHeart;
+        DestroyInvisible.OnDestroy -= SetDamage;
+        BombController.EventSliceBomb -= SetDamage;    
     }
 
     private void Start()
@@ -32,7 +40,7 @@ public class HealthController : MonoBehaviour
         Destroy(heartTemplate);
     }
 
-    private void SetDamage()
+    private void SetDamage(int damage)
     {
         if (IndexHead < _hearts.Length)
         {
