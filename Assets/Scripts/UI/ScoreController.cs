@@ -10,17 +10,18 @@ namespace UI
     public class ScoreController : MonoBehaviour
     {
         public const string KeyPlayerPrefs = "SaveRecordScore";
-
-        [SerializeField] private Text scoreText;
-        [SerializeField] private Text recordScoreText;
         [SerializeField] private float upDelay;
 
+        [SerializeField] private TextMeshProUGUI currentScoreText;
+        [SerializeField] private TextMeshProUGUI recordScoreText;
+        [SerializeField] private float comboDelay = 0.3f;
+        
         public TextMeshPro comboText;
 
         private int _currentScore = 0;
         private int _recordScore;
         private int _scoreCombo = 0;
-        private float _comboDelay = 0.2f;
+        
         private float _lastTimeSlice = 0f;
         private StringBuilder _textForCombo;
         private void Awake()
@@ -41,13 +42,13 @@ namespace UI
 
         private void Update()
         {
-            if (Time.time - _lastTimeSlice > _comboDelay)
+            if (Time.time - _lastTimeSlice > comboDelay)
             {
                 if (_scoreCombo > 2)
                 {
-                    _textForCombo.Append("<align=\"left\"><size=4>");
+                    _textForCombo.Append("<align=\"left\"><size=12><color=yellow>");
                     _textForCombo.Append(_scoreCombo);
-                    _textForCombo.Append(" фрукта</size></align>\nсерия\nx");
+                    _textForCombo.Append(" фрукта</color></size></align>\nсерия\nx");
                     _textForCombo.Append(_scoreCombo);
 
                     comboText.text = _textForCombo.ToString();
@@ -71,24 +72,24 @@ namespace UI
             _lastTimeSlice = Time.time;
             _currentScore += score;
             
-            HighScore();
-            recordScoreText.text = _recordScore.ToString();
-            StartCoroutine(IncreaseScore(score));
+            CheckRecordScore();
+            StartCoroutine(IncreaseScore(score, currentScoreText));
         }
     
-        private IEnumerator IncreaseScore(int newScore)
+        private IEnumerator IncreaseScore(int newScore, TextMeshProUGUI text)
         {
             for (int i = 1; i < newScore + 1; i++)
             {
-                scoreText.text = (int.Parse(scoreText.text) + 1).ToString();
+                text.text = (int.Parse(currentScoreText.text) + 1).ToString();
                 yield return new WaitForSeconds(upDelay);
             }
         }
 
-        private void HighScore()
+        private void CheckRecordScore()
         {
             if (_currentScore > _recordScore)
             {
+                StartCoroutine(IncreaseScore(_currentScore - _recordScore, recordScoreText));
                 _recordScore = _currentScore;
                 PlayerPrefs.SetInt(KeyPlayerPrefs, _recordScore);
             }
