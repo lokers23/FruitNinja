@@ -28,7 +28,7 @@ namespace Fruit
         
         private void Awake()
         {
-            _blade = GameObject.Find("Blade");
+            _blade = GameObject.FindWithTag("Player");
             _pieces = sliceObject.GetComponentsInChildren<PhysicObject>();
             _component = GetComponent<PhysicObject>();
             DetectSwipe.EventSwipe += OnSlice;
