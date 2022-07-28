@@ -1,10 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
 using Fruit;
+using Fruit.Bonus;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
 {
@@ -14,9 +11,12 @@ public class HealthController : MonoBehaviour
     [SerializeField] private int damage;
 
     private GameObject[] _hearts;
-    private int _indexHead = 0;
+
+    public int IndexHead { get; private set; } = 0;
+
     private void Awake()
     {
+        HeartController.EventSliceHeart += RecoverHeart;
         DestroyInvisible.OnDestroy += SetDamage;
     }
 
@@ -34,19 +34,31 @@ public class HealthController : MonoBehaviour
 
     private void SetDamage()
     {
-        if (_indexHead < _hearts.Length)
+        if (IndexHead < _hearts.Length)
         {
             for (int i = 0; i < damage; i++)
             {
-                _hearts[_indexHead].SetActive(false);
-                _indexHead++;
+                _hearts[IndexHead].SetActive(false);
+                IndexHead++;
             }
         }
         
-        if (_indexHead >= _hearts.Length)
+        if (IndexHead >= _hearts.Length)
         {
             EventEndGame?.Invoke();
             DestroyInvisible.OnDestroy -= SetDamage;
+        }
+    }
+
+    private void RecoverHeart(int countRecoverHearts)
+    {
+        if (IndexHead > 0)
+        {
+            for (int i = 0; i < countRecoverHearts; i++)
+            {
+                IndexHead--;
+                _hearts[IndexHead].SetActive(true);
+            }
         }
     }
 }
