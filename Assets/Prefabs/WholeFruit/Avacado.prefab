@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8201053140189867275}
   - component: {fileID: 6564280531552213861}
   - component: {fileID: 8346042462154241283}
+  - component: {fileID: 2363886833418383597}
   m_Layer: 0
   m_Name: Avacado
   m_TagString: Untagged
@@ -98,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50050763776e51641b006ebe8664ebbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityVector: {x: 0, y: -9.82}
+  gravityVector: {x: 0, y: -15}
   speedScale: {x: -0.2, y: -0.2, z: 0}
   spriteFruit: {fileID: 13753893911215774}
   direction: {x: 0, y: 0}
@@ -135,8 +136,20 @@ MonoBehaviour:
   wholeObject: {fileID: 5354807055495243288}
   sliceObject: {fileID: 7085007637391451331, guid: 057aa9197ac53f645984b654bf6da777, type: 3}
   blot: {fileID: 1554520304572125486, guid: dfdf7d8a4af422e4fbd01f4459b70bdc, type: 3}
-  slicedDirectionX: 0.5
+  slicedDirectionX: 1
   slicedDirectionY: 0.5
+--- !u!114 &2363886833418383597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451866752012967567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f20a70e0b0dfe143867e9ded1a2f5c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2794501638513099975
 GameObject:
   m_ObjectHideFlags: 0

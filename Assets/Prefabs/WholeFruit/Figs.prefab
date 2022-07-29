@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 2875183166163587163}
   - component: {fileID: 1478231542457420653}
   - component: {fileID: 7897579969958497539}
+  - component: {fileID: 171155694196281770}
   m_Layer: 0
   m_Name: Figs
   m_TagString: Untagged
@@ -181,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50050763776e51641b006ebe8664ebbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityVector: {x: 0, y: -9.82}
+  gravityVector: {x: 0, y: -15}
   speedScale: {x: -0.2, y: -0.2, z: 0}
   spriteFruit: {fileID: 9044298603047084751}
   direction: {x: 0, y: 0}
@@ -211,15 +212,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0362508658bdf4d8c0162aca1fc499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolObjects: {fileID: 3402001150726581481, guid: e68ec62e51041374e8019e0c58b642f6, type: 3}
+  damage: 1
   score: 30
   scoreText: {fileID: 1375373069160523567, guid: b7f38f606d001db4ab843fd77b137999, type: 3}
   radius: 1.35
   wholeObject: {fileID: 4560235071314868613}
   sliceObject: {fileID: 7367203973200581094, guid: b81910a75ff896d47a4fe6c1049f3d7b, type: 3}
   blot: {fileID: 6340872915267444701, guid: 35218cdf3eb54124e8b72448eb3ec2e8, type: 3}
-  slicedDirectionX: 0.5
+  slicedDirectionX: 1
   slicedDirectionY: 0.5
+--- !u!114 &171155694196281770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7809144254871329146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f20a70e0b0dfe143867e9ded1a2f5c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8008115609177437446
 GameObject:
   m_ObjectHideFlags: 0

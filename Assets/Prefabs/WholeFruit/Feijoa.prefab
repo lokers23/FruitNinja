@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3087872992696263935}
   - component: {fileID: 4400944424871383280}
   - component: {fileID: 6355418631981364599}
+  - component: {fileID: -6340845946344093187}
   m_Layer: 0
   m_Name: Feijoa
   m_TagString: Untagged
@@ -98,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50050763776e51641b006ebe8664ebbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityVector: {x: 0, y: -9.82}
+  gravityVector: {x: 0, y: -15}
   speedScale: {x: -0.2, y: -0.2, z: 0}
   spriteFruit: {fileID: 32940036543661565}
   direction: {x: 0, y: 0}
@@ -128,15 +129,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0362508658bdf4d8c0162aca1fc499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolObjects: {fileID: 3402001150726581481, guid: e68ec62e51041374e8019e0c58b642f6, type: 3}
+  damage: 1
   score: 30
   scoreText: {fileID: 1375373069160523567, guid: b7f38f606d001db4ab843fd77b137999, type: 3}
   radius: 1.35
   wholeObject: {fileID: 7011242891801823946}
   sliceObject: {fileID: 3619635545939875672, guid: 539ee277b1ee6354d884f68d9c97e3eb, type: 3}
   blot: {fileID: 8635367900737454822, guid: ec967d8f4b7773b4b81031eebedf3d33, type: 3}
-  slicedDirectionX: 0.5
+  slicedDirectionX: 1
   slicedDirectionY: 0.5
+--- !u!114 &-6340845946344093187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554780949426347443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f20a70e0b0dfe143867e9ded1a2f5c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3231533455042585541
 GameObject:
   m_ObjectHideFlags: 0

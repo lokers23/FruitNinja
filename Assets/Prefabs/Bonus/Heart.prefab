@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3296853870504386991}
   - component: {fileID: 6322543231562689434}
   - component: {fileID: 2143658261165804851}
+  - component: {fileID: 472094023929134471}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Bonus
@@ -46,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50050763776e51641b006ebe8664ebbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityVector: {x: 0, y: -9.82}
+  gravityVector: {x: 0, y: -15}
   speedScale: {x: -0.12, y: -0.12, z: 0}
   spriteFruit: {fileID: 5855907176878103379}
   direction: {x: 0, y: 0}
@@ -79,6 +80,18 @@ MonoBehaviour:
   radius: 1
   imageAfterSlice: {fileID: 2724118173050830680, guid: 5b85fdb9b6817bd459c7b6fb65615dba, type: 3}
   recoverHeart: 1
+--- !u!114 &472094023929134471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399282239970311379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f20a70e0b0dfe143867e9ded1a2f5c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1632039728355990200
 GameObject:
   m_ObjectHideFlags: 0
