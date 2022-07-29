@@ -19,6 +19,15 @@ namespace Spawner
         [SerializeField] private GameObject heart;
         [SerializeField] private float chanceSpawnHeart = 0.1f;
         
+        [SerializeField] private GameObject box;
+        [SerializeField] private float chanceSpawnBox = 0.1f;
+        
+        [SerializeField] private GameObject magnet;
+        [SerializeField] private float chanceSpawnMagnet = 0.1f;
+        
+        [SerializeField] private GameObject iceBlock;
+        [SerializeField] private float chanceSpawnIceBlock = 0.1f;
+        
         [SerializeField] private float chanceSpawn;
         [SerializeField] private SpawnerSetting spawnerSetting;
         [SerializeField] private DifficultSetting difficultSetting;
@@ -78,7 +87,23 @@ namespace Spawner
                             prefab = heart;
                             halfCount--;
                         }
-                        else{
+                        else if (halfCount > 0 && Random.Range(0.0f, 1.0f) <= chanceSpawnBox)
+                        {
+                            prefab = box;
+                            halfCount--;
+                        }
+                        else if (halfCount > 0 && Random.Range(0.0f, 1.0f) <= chanceSpawnMagnet)
+                        {
+                            prefab = magnet;
+                            halfCount--;
+                        }
+                        else if (halfCount > 0 && Random.Range(0.0f, 1.0f) <= chanceSpawnIceBlock)
+                        {
+                            prefab = iceBlock;
+                            halfCount--;
+                        }
+                        else
+                        {
                             prefab = fruits[Random.Range(0, fruits.Length)];
                         }
                         
@@ -107,7 +132,7 @@ namespace Spawner
             }
         }
 
-        private static Vector2 VectorFromAngle(float angle)
+        public static Vector2 VectorFromAngle(float angle)
         {
             var sin = Mathf.Sin(angle);
             var cos = Mathf.Cos(angle);

@@ -44,7 +44,7 @@ namespace Fruit.Bonus
         private  void CreateImage(Vector3 position)
         {
             var image = Instantiate(imageAfterSlice,new Vector3(position.x, position.y, PositionBonusImageAxisZ) , Quaternion.identity);
-            Destroy(image, 0.5f);
+            //Destroy(image, 0.5f);
         }
     }
 }

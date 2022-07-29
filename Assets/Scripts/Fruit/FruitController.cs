@@ -25,8 +25,6 @@ namespace Fruit
         [SerializeField] private float slicedDirectionX;
         [SerializeField] private float slicedDirectionY;
 
-        
-        
         private GameObject _blade;
         private PhysicObject[] _pieces;
         private PhysicObject _component;

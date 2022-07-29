@@ -22,14 +22,17 @@ public class BombController : MonoBehaviour
         [SerializeField] private float powerExplosion;
         [SerializeField] private float minRadiusExplosion;
         [SerializeField] private float maxRadiusExplosion;
+        
+        [SerializeField] private ParticleSystem particles;
+        
         private GameObject _blade;
-
+        
         private void Awake()
         {
             _blade = GameObject.FindWithTag("Player");
             DetectSwipe.EventSwipe += OnSlice;
         }
-        
+
         private void OnSlice()
         {
             var bladePosition = _blade.transform.position;
@@ -38,11 +41,14 @@ public class BombController : MonoBehaviour
             var distance = Vector3.Distance(basePosition, bladePosition);
             if (distance <= radiusSlice)
             {
+                var explosion = Instantiate(particles, basePosition, Quaternion.identity);
+                Destroy(explosion, 1f);
                 CreateImage(basePosition);
                 CreateText(basePosition);
                 
                 EventSliceBomb?.Invoke(damage);
                 EventExplosion?.Invoke(powerExplosion, minRadiusExplosion, maxRadiusExplosion, transform.position);
+                
                 Destroy(gameObject);
             }
         }
