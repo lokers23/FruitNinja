@@ -22,8 +22,8 @@ public class BombController : MonoBehaviour
         [SerializeField] private float powerExplosion;
         [SerializeField] private float minRadiusExplosion;
         [SerializeField] private float maxRadiusExplosion;
-        
-        [SerializeField] private ParticleSystem particles;
+
+        [SerializeField] private GameObject particles;
         
         private GameObject _blade;
         

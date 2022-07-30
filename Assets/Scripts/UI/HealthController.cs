@@ -8,8 +8,6 @@ public class HealthController : MonoBehaviour
     public static event Action EventEndGame;
     [SerializeField] private int heartsCount;
 
-    //[SerializeField] private int damage;
-
     private GameObject[] _hearts;
 
     public int IndexHead { get; private set; } = 0;

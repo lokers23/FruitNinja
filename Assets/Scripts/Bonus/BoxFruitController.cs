@@ -29,7 +29,7 @@ public class BoxFruitController : MonoBehaviour
         _pieces = sliceObject.GetComponentsInChildren<PhysicObject>();
         _component = GetComponent<PhysicObject>();
         DetectSwipe.EventSwipe += OnSlice;
-        BombController.EventExplosion += CheckExplosion;
+        //BombController.EventExplosion += CheckExplosion;
     }
         
         private void OnSlice()
@@ -71,7 +71,7 @@ public class BoxFruitController : MonoBehaviour
         private void OnDisable()
         {
             DetectSwipe.EventSwipe -= OnSlice;
-            BombController.EventExplosion -= CheckExplosion;
+            //BombController.EventExplosion -= CheckExplosion;
         }
 
         private void SettingParametersOfHalves(PhysicObject firstObject, PhysicObject secondObject, Quaternion rotation)
@@ -87,24 +87,5 @@ public class BoxFruitController : MonoBehaviour
         {
             var newObject = Instantiate(sliceObject, position, Quaternion.identity);
             Destroy(newObject, 3f);
-        }
-
-        private void CheckExplosion(float powerExplosion, float minRadiusExplosion, float maxRadiusExplosion, Vector3 positionBomb)
-        {
-            var heading = transform.position - positionBomb;
-            var magnitude = heading.sqrMagnitude;
-            if (magnitude >= maxRadiusExplosion * maxRadiusExplosion)
-            {
-                return;
-            }
-            
-            if (magnitude < minRadiusExplosion * minRadiusExplosion)
-            {
-                _component.direction = new Vector2(_component.direction.x + heading.x*powerExplosion, _component.direction.y + heading.y* powerExplosion);
-            }
-            else
-            {
-                _component.direction = new Vector2(_component.direction.x + heading.x * powerExplosion / 2, _component.direction.y + heading.y * powerExplosion /2 );
-            }
         }
 }

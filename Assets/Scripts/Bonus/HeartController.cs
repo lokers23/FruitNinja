@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Fruit.Bonus
@@ -10,7 +11,7 @@ namespace Fruit.Bonus
         
         [SerializeField] private float radius;
         [SerializeField] private GameObject imageAfterSlice;
-
+        [SerializeField] private GameObject particalObject;
         [SerializeField] private int recoverHeart = 1;
         private GameObject _blade;
 
@@ -30,6 +31,8 @@ namespace Fruit.Bonus
             {
                 CreateImage(basePosition);
 
+                var particalGameObject = Instantiate(particalObject, basePosition, Quaternion.identity);
+                Destroy(particalGameObject, 2f);
                 EventSliceHeart?.Invoke(recoverHeart);
 
                 Destroy(gameObject);
@@ -44,7 +47,6 @@ namespace Fruit.Bonus
         private  void CreateImage(Vector3 position)
         {
             var image = Instantiate(imageAfterSlice,new Vector3(position.x, position.y, PositionBonusImageAxisZ) , Quaternion.identity);
-            //Destroy(image, 0.5f);
         }
     }
 }

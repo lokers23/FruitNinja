@@ -7,9 +7,8 @@ using UnityEngine.UI;
 
 public class IceController : MonoBehaviour
 {
-    //static public event Action<float> IceEvent;
     private const float PositionBonusImageAxisZ = 19f;
-    [SerializeField] private Image background;
+    //[SerializeField] private Camera cameraBackground;
 
     [SerializeField] private float timeSlowAction = 5f;
     [SerializeField] private float slowPower = 0.07f;
@@ -25,11 +24,13 @@ public class IceController : MonoBehaviour
     private GameObject _blade;
     private PhysicObject[] _pieces;
     private PhysicObject _component;
-
+    private DestroyInvisible _destroyInvisible;
+    
     private void Awake()
     {
         _blade = GameObject.FindWithTag("Player");
         _pieces = sliceObject.GetComponentsInChildren<PhysicObject>();
+        _destroyInvisible = GetComponent<DestroyInvisible>();
         _component = GetComponent<PhysicObject>();
         DetectSwipe.EventSwipe += OnSlice;
     }
@@ -59,10 +60,11 @@ public class IceController : MonoBehaviour
              SettingParametersOfHalves(_pieces[0], _pieces[1], rotation);
              CreatingSliceObject(basePosition);
              CreateImage(basePosition);
-             //ceEvent?.Invoke(timeSlowAction);
+
              StartCoroutine(TimeScaling());
              SlowMotion();
              wholeObject.SetActive(false);
+             _destroyInvisible.enabled = false;
              Destroy(gameObject, timeSlowAction);
              DetectSwipe.EventSwipe -= OnSlice;
              
