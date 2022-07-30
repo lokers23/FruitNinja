@@ -79,7 +79,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1
   imageAfterSlice: {fileID: 2724118173050830680, guid: 5b85fdb9b6817bd459c7b6fb65615dba, type: 3}
+  particalObject: {fileID: 3950118438636675725, guid: 3cea0701db5fad84bafb4f5fbb207890, type: 3}
   recoverHeart: 1
+  heart: {fileID: 5642736706090619978, guid: 2cab1f9776b367e49b13386a2e0d8898, type: 3}
 --- !u!114 &472094023929134471
 MonoBehaviour:
   m_ObjectHideFlags: 0

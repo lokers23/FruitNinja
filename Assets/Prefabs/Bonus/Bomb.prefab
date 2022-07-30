@@ -218,7 +218,8 @@ MonoBehaviour:
   powerExplosion: 2
   minRadiusExplosion: 5
   maxRadiusExplosion: 10
-  particles: {fileID: 3261952619981777857, guid: ff8c9f5560433b54294ccbe7e6299299, type: 3}
+  fragmentParticles: {fileID: 8732716073107960498, guid: 26dfa6c5417e28a45affbae48f5c7a58, type: 3}
+  particles: {fileID: 4378638634389436537, guid: ff8c9f5560433b54294ccbe7e6299299, type: 3}
 --- !u!114 &5781051031261245504
 MonoBehaviour:
   m_ObjectHideFlags: 0

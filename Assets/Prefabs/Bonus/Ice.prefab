@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 3877394789034555054}
   - component: {fileID: 3877394789034555053}
   - component: {fileID: 3877394789034555040}
+  - component: {fileID: -5661922716660741537}
   m_Layer: 0
   m_Name: Ice
   m_TagString: Bonus
@@ -224,12 +225,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae39a360b06ee7489c698075e7255a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  background: {fileID: 0}
-  timeSlowAction: 10
+  timeSlowAction: 3
   slowPower: 0.01
   radius: 1
   wholeObject: {fileID: 3877394788684332404}
-  sliceObject: {fileID: 2851424844169549967, guid: d587aab9e16c21c45a495b725d27e573, type: 3}
+  sliceObject: {fileID: 8507477443348702502, guid: d587aab9e16c21c45a495b725d27e573, type: 3}
   imageAfterSlice: {fileID: 2609022514018163909, guid: 1438649f2f4879f4eb96faf25e87baaa, type: 3}
   slicedDirectionX: 0.5
   slicedDirectionY: 0.5
@@ -250,3 +250,15 @@ MonoBehaviour:
   spriteFruit: {fileID: 3877394788684332405}
   direction: {x: 0, y: 0}
   rotate: 0
+--- !u!114 &-5661922716660741537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877394789034555052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f20a70e0b0dfe143867e9ded1a2f5c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
