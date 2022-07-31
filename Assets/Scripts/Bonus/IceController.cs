@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class IceController : MonoBehaviour
 {
     private const float PositionBonusImageAxisZ = 19f;
-    //[SerializeField] private Camera cameraBackground;
 
     [SerializeField] private float timeSlowAction = 5f;
     [SerializeField] private float slowPower = 0.07f;

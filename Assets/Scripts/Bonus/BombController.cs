@@ -9,6 +9,9 @@ using UnityEngine;
 public class BombController : MonoBehaviour
 {
         private const float PositionBonusImageAxisZ = 19f;
+        private const float TimeLifeImage = 0.5f;
+        private const float TimeLifeText = 1f;
+        private const float TimeLifeParticle = 1f;
         public static event Action<int> EventSliceBomb;
         public static event Action<float, float, float, Vector3> EventExplosion;
         
@@ -42,7 +45,7 @@ public class BombController : MonoBehaviour
             if (distance <= radiusSlice)
             {
                 var explosion = Instantiate(particles, basePosition, Quaternion.identity);
-                Destroy(explosion, 1f);
+                Destroy(explosion, TimeLifeParticle);
                 CreateImage(basePosition);
                 CreateText(basePosition);
                 
@@ -61,12 +64,12 @@ public class BombController : MonoBehaviour
         private  void CreateImage(Vector3 position)
         {
             var image = Instantiate(imageAfterSlice,new Vector3(position.x, position.y, PositionBonusImageAxisZ) , Quaternion.identity);
-            Destroy(image, 0.5f);
+            Destroy(image, TimeLifeImage);
         }
 
         private  void CreateText(Vector3 position)
         {
             TextMeshPro newObject = Instantiate(BonusText, position, quaternion.identity);
-            Destroy(newObject.gameObject, 1f);
+            Destroy(newObject.gameObject, TimeLifeText);
         }
 }

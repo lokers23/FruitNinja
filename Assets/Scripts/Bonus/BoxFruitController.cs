@@ -29,7 +29,6 @@ public class BoxFruitController : MonoBehaviour
         _pieces = sliceObject.GetComponentsInChildren<PhysicObject>();
         _component = GetComponent<PhysicObject>();
         DetectSwipe.EventSwipe += OnSlice;
-        //BombController.EventExplosion += CheckExplosion;
     }
         
         private void OnSlice()

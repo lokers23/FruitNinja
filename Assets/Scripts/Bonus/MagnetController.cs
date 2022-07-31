@@ -15,7 +15,6 @@ public class MagnetController : MonoBehaviour
     [SerializeField] private GameObject _particleObject;
     [SerializeField] private PhysicObject _physicObject;
     
-    
     [SerializeField] private GameObject wholeObject;
     [SerializeField] private GameObject sliceObject;
     [SerializeField] private GameObject imageAfterSlice;
