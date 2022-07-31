@@ -7,7 +7,7 @@ namespace Fruit.Bonus
     public class HeartController : MonoBehaviour
     {
         private const float PositionBonusImageAxisZ = 19f;
-        public static event Action<int> EventSliceHeart;
+        public static event Action<int, Vector3> EventSliceHeart;
         
         [SerializeField] private float radius;
         [SerializeField] private GameObject imageAfterSlice;
@@ -33,8 +33,7 @@ namespace Fruit.Bonus
 
                 var particalGameObject = Instantiate(particalObject, basePosition, Quaternion.identity);
                 Destroy(particalGameObject, 2f);
-                EventSliceHeart?.Invoke(recoverHeart);
-
+                EventSliceHeart?.Invoke(recoverHeart, transform.position);
                 Destroy(gameObject);
             }
         }

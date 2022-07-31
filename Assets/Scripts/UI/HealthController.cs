@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Fruit;
 using Fruit.Bonus;
 using UnityEngine;
@@ -7,11 +8,11 @@ public class HealthController : MonoBehaviour
 {
     public static event Action EventEndGame;
     [SerializeField] private int heartsCount;
-
+    [SerializeField] private GameObject heartPrefab;
+    
     private GameObject[] _hearts;
 
     public int IndexHead { get; private set; } = 0;
-
     private void OnEnable()
     {
         HeartController.EventSliceHeart += RecoverHeart;
@@ -23,7 +24,7 @@ public class HealthController : MonoBehaviour
     {
         HeartController.EventSliceHeart -= RecoverHeart;
         DestroyInvisible.OnDestroy -= SetDamage;
-        BombController.EventSliceBomb -= SetDamage;    
+        BombController.EventSliceBomb -= SetDamage; 
     }
 
     private void Start()
@@ -44,7 +45,7 @@ public class HealthController : MonoBehaviour
         {
             for (int i = 0; i < damage; i++)
             {
-                _hearts[IndexHead].SetActive(false);
+                _hearts[_hearts.Length - 1 - IndexHead].SetActive(false);
                 IndexHead++;
             }
         }
@@ -56,15 +57,31 @@ public class HealthController : MonoBehaviour
         }
     }
 
-    private void RecoverHeart(int countRecoverHearts)
+    private void RecoverHeart(int countRecoverHearts, Vector3 position)
     {
         if (IndexHead > 0)
         {
             for (int i = 0; i < countRecoverHearts; i++)
             {
-                IndexHead--;
-                _hearts[IndexHead].SetActive(true);
+                var heart = Instantiate(heartPrefab, position, Quaternion.identity);
+                StartCoroutine( AnimationHeart(heart));
             }
         }
+    }
+
+    private IEnumerator AnimationHeart(GameObject heart)
+    {
+        IndexHead--;
+        var positionHeartInBar = _hearts[_hearts.Length - 1 - IndexHead].transform.position;
+        var index = IndexHead;
+        while (heart.transform.position != positionHeartInBar)
+        {
+            heart.transform.position = Vector3.MoveTowards(heart.transform.position, positionHeartInBar, 20 * Time.deltaTime);
+
+            yield return null;
+        }
+        
+        _hearts[_hearts.Length - 1 - index].SetActive(true);
+        Destroy(heart);
     }
 }
