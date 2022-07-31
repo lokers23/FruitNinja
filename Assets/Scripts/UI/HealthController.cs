@@ -64,6 +64,7 @@ public class HealthController : MonoBehaviour
             for (int i = 0; i < countRecoverHearts; i++)
             {
                 var heart = Instantiate(heartPrefab, position, Quaternion.identity);
+                IndexHead--;
                 StartCoroutine( AnimationHeart(heart));
             }
         }
@@ -71,17 +72,20 @@ public class HealthController : MonoBehaviour
 
     private IEnumerator AnimationHeart(GameObject heart)
     {
-        IndexHead--;
         var positionHeartInBar = _hearts[_hearts.Length - 1 - IndexHead].transform.position;
         var index = IndexHead;
         while (heart.transform.position != positionHeartInBar)
         {
-            heart.transform.position = Vector3.MoveTowards(heart.transform.position, positionHeartInBar, 20 * Time.deltaTime);
+            heart.transform.position = Vector3.MoveTowards(heart.transform.position, positionHeartInBar, 25 * Time.deltaTime);
 
             yield return null;
         }
-        
-        _hearts[_hearts.Length - 1 - index].SetActive(true);
+
+        if (index == IndexHead)
+        {
+            _hearts[_hearts.Length - 1 - index].SetActive(true);
+        }
+       
         Destroy(heart);
     }
 }
