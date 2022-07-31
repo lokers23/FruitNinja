@@ -363,7 +363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631129845787732285, guid: 198da43a73a7aff49bca4f97b6ffaad6, type: 3}
       propertyPath: chanceSpawn
-      value: 0.2
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5631129845787732285, guid: 198da43a73a7aff49bca4f97b6ffaad6, type: 3}
       propertyPath: poolObjects
@@ -479,7 +479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631129845787732285, guid: 198da43a73a7aff49bca4f97b6ffaad6, type: 3}
       propertyPath: spawnerSetting.periodInRow
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5631129845787732285, guid: 198da43a73a7aff49bca4f97b6ffaad6, type: 3}
       propertyPath: spawnerSetting.maxSpawnDelay
@@ -1620,7 +1620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631129845787732285, guid: 198da43a73a7aff49bca4f97b6ffaad6, type: 3}
       propertyPath: chanceSpawn
-      value: 0.2
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5631129845787732285, guid: 198da43a73a7aff49bca4f97b6ffaad6, type: 3}
       propertyPath: poolObjects
@@ -1736,7 +1736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631129845787732285, guid: 198da43a73a7aff49bca4f97b6ffaad6, type: 3}
       propertyPath: spawnerSetting.periodInRow
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5631129845787732285, guid: 198da43a73a7aff49bca4f97b6ffaad6, type: 3}
       propertyPath: spawnerSetting.maxSpawnDelay
@@ -3281,7 +3281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631129845787732285, guid: 198da43a73a7aff49bca4f97b6ffaad6, type: 3}
       propertyPath: spawnerSetting.periodInRow
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5631129845787732285, guid: 198da43a73a7aff49bca4f97b6ffaad6, type: 3}
       propertyPath: spawnerSetting.maxSpawnDelay
@@ -3301,7 +3301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631129845787732285, guid: 198da43a73a7aff49bca4f97b6ffaad6, type: 3}
       propertyPath: difficultSetting.limitNumberFruit
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5631129845787732285, guid: 198da43a73a7aff49bca4f97b6ffaad6, type: 3}
       propertyPath: difficultSetting.reduceSpawnDelay
@@ -3568,6 +3568,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -75.78003
       objectReference: {fileID: 0}
+    - target: {fileID: 5946755408488157418, guid: 204058450fc7a054d9258a6ae4cfc7ac, type: 3}
+      propertyPath: heartPrefab
+      value: 
+      objectReference: {fileID: 5642736706090619978, guid: 2cab1f9776b367e49b13386a2e0d8898, type: 3}
     - target: {fileID: 5946755408488157418, guid: 204058450fc7a054d9258a6ae4cfc7ac, type: 3}
       propertyPath: heartsCount
       value: 3
